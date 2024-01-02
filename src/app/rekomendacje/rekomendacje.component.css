@@ -1,0 +1,36 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 50px;
+  padding: 40px 20px;
+}
+.pdf-info {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+/* .budimex h1 {
+  color: rgb(70, 70, 70);
+} */
+h1 {
+  color: rgb(34, 34, 65);
+}
+h1 {
+  margin: 0;
+  padding: 0;
+}
+.pdf-info a {
+  color: rgb(15, 12, 61);
+}
+.mid {
+  text-align: center;
+}
+.mid a {
+  font-weight: bold;
+}
+body {
+  text-align: justify;
+  text-justify: inter-word;
+}

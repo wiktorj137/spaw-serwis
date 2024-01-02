@@ -1,0 +1,85 @@
+<!-- app.component.html -->
+
+<body>
+  <div class="content">
+    <main>
+      <header>
+        <div class="logo-text">
+          <div class="logo"><img alt="" /></div>
+          <div class="logohidden"></div>
+          <a class="hidden">SPAW-SERWIS</a>
+        </div>
+        <nav class="buttons">
+          <a
+            (click)="changePg('app-onas')"
+            [ngClass]="{ active: activePage === 'app-onas' }"
+            >O nas</a
+          >
+          <a
+            (click)="changePg('app-kontakt')"
+            [ngClass]="{ active: activePage === 'app-kontakt' }"
+            >Kontakt</a
+          >
+          <a
+            (click)="changePg('app-rekomendacje')"
+            [ngClass]="{ active: activePage === 'app-rekomendacje' }"
+            >Rekomendajce</a
+          >
+          <a
+            (click)="changePg('app-kontrahenci')"
+            [ngClass]="{ active: activePage === 'app-kontrahenci' }"
+            >Nasi kontrahenci</a
+          >
+        </nav>
+        <div class="pasek">
+          <div class="container">
+            <div (click)="changeVisible()" class="przycisk">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div
+        [ngStyle]="{ display: isVisible ? 'block' : 'none' }"
+        class="box"
+        [@slideInOut]="isMenuOpen ? 'in' : 'out'"
+      >
+        <!-- nawigacja urządzeń mobilnych -->
+        <nav class="nav2">
+          <ul>
+            <li><a (click)="changePg('app-onas')">O nas</a></li>
+            <li><a (click)="changePg('app-kontakt')">Kontakt</a></li>
+            <li><a (click)="changePg('app-rekomendacje')">Rekomendacje</a></li>
+            <li>
+              <a (click)="changePg('app-kontrahenci')">Nasi kontrahenci</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="tresc">
+        <ng-container *ngIf="activePage === 'app-onas'">
+          <app-onas></app-onas>
+        </ng-container>
+        <ng-container *ngIf="activePage === 'app-kontakt'">
+          <app-kontakt></app-kontakt>
+        </ng-container>
+        <ng-container *ngIf="activePage === 'app-rekomendacje'">
+          <app-rekomendacje></app-rekomendacje>
+        </ng-container>
+        <ng-container *ngIf="activePage === 'app-kontrahenci'">
+          <app-kontrahenci></app-kontrahenci>
+        </ng-container>
+      </div>
+
+      <footer>
+        <div class="copyright">
+          <p>&copy; 2023 Spaw-Serwis <sup>®</sup></p>
+        </div>
+      </footer>
+    </main>
+  </div>
+</body>

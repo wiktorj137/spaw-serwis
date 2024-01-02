@@ -1,0 +1,306 @@
+* {
+  box-sizing: border-box;
+}
+
+.logo img {
+  content: url("../assets/images/SPAW_logo.jpg");
+}
+
+.logo img,
+.buttons a {
+  user-select: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  touch-action: manipulation;
+  -webkit-user-drag: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url("../assets/images/background.jpg");
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
+}
+
+.content {
+  content: "";
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+.logo img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+}
+
+.logo {
+  display: block;
+  align-self: start;
+}
+
+header {
+  display: flex;
+  max-width: 100%;
+  height: auto;
+  flex-direction: column;
+}
+
+main {
+  min-width: 20%;
+  max-width: 40%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.buttons a {
+  background-color: rgba(110, 21, 21, 0.678);
+  width: 25%;
+  display: flex;
+  float: left;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* padding: 5px; */
+  font-size: 90%;
+}
+.buttons a:hover {
+  color: rgb(221, 221, 221);
+}
+
+.przycisk {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(240, 248, 255);
+  float: right;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.nav2 ul li {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.nav2 ul li:hover {
+  background-color: rgba(255, 255, 255, 0.062);
+  width: 100%;
+}
+
+.nav2 ul {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 80%;
+  justify-content: center;
+}
+body.menu-open {
+  overflow: hidden;
+}
+
+.box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(110, 21, 21, 0.219);
+  overflow: hidden;
+  transition: height 0.5s ease-in-out;
+}
+
+.box.active {
+  height: 400px; /* Maksymalna wysokość, dostosuj do potrzeb */
+}
+
+.nav2 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 150;
+  align-items: center;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+}
+
+.box.active .nav2 {
+  max-height: 500px; /* Maksymalna wysokość, dostosuj do potrzeb */
+}
+
+.buttons a.active {
+  background-color: rgba(138, 46, 46, 0.384);
+  font-weight: bold;
+}
+
+.copyright {
+  color: white;
+  text-align: center;
+  font-size: 10px;
+  padding: 5px 0 5px 0;
+}
+
+footer {
+  margin-top: auto;
+}
+
+@media only screen and (max-width: 767px) {
+  main {
+    min-width: 100%;
+  }
+
+  .box {
+    background-color: rgba(0, 0, 0, 0.801);
+  }
+
+  .buttons {
+    display: none;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    justify-content: left;
+    width: 100%;
+  }
+
+  .container {
+    display: flex;
+    justify-content: right;
+    padding: 0;
+  }
+
+  .pasek.active {
+    background-color: rgba(110, 21, 21, 0.493);
+  }
+
+  .logo,
+  .logo img {
+    width: auto;
+    height: 50px;
+  }
+
+  .pasek {
+    background-color: rgba(110, 21, 21, 0.493);
+    max-height: 50px;
+    width: 100%;
+  }
+
+  .przycisk div {
+    background-color: rgb(0, 0, 0);
+    width: 50%;
+    height: 3px;
+  }
+  .logo img {
+    display: none;
+  }
+  .logo {
+    background-color: rgba(110, 21, 21, 0.493);
+    background-image: url("../assets/images/welding.png");
+    height: 50px;
+    width: auto;
+  }
+
+  .tresc .logo-text a {
+    text-align: center;
+  }
+  header,
+  .nav2 {
+    position: sticky;
+  }
+
+  .logo-text {
+    display: flex;
+    background-color: rgba(110, 21, 21, 0.493);
+    color: white;
+    width: auto;
+    font-size: 100%;
+    align-items: center;
+    padding-left: 0px;
+    white-space: nowrap;
+    font-weight: bold;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .logohidden {
+    height: 40px;
+    width: 40px;
+    display: block;
+    filter: invert();
+    background-image: url("../assets/images/welding.png");
+    background-size: contain;
+  }
+  .logo-text img {
+    display: none;
+  }
+  .logo header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+  }
+
+  .box {
+    top: 0;
+    width: 100%;
+    background-color: none;
+  }
+
+  .box.active {
+    position: sticky;
+  }
+  .icon {
+    display: block;
+    height: 10px;
+  }
+
+  body {
+    background-image: none;
+    background: linear-gradient(
+      232deg,
+      rgba(49, 9, 9, 1) 0%,
+      rgba(48, 9, 9, 0.9934348739495799) 53%,
+      rgba(37, 8, 8, 0.951) 100%
+    );
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .przycisk {
+    display: none;
+  }
+
+  .hidden,
+  .icon {
+    display: none;
+  }
+}

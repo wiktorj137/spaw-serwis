@@ -1,0 +1,34 @@
+.kontrahenci-container {
+  max-width: 800px;
+  background-color: #fafafa;
+  padding: 15px 20px 30px 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+strong {
+  font-weight: bold;
+}
+
+li {
+  margin-left: 10px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+
+.srodek {
+  text-align: center;
+  margin-top: 10px;
+}
+@media (max-width: 768px) {
+  .kontrahenci-container {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+}
